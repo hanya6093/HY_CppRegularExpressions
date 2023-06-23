@@ -103,7 +103,6 @@
 <pre>
 ".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
-
 [在线练习](https://regex101.com/r/xc9GkU/1)
 
 ## 2.2 字符集
@@ -126,7 +125,6 @@
 <pre>
 "ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
 </pre>
-
 [在线练习](https://regex101.com/r/wL3xtE/1)
 
 ### 2.2.1 否定字符集
@@ -137,7 +135,6 @@
 <pre>
 "[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
-
 [在线练习](https://regex101.com/r/nNNlq3/1)
 
 ## 2.3 重复次数
@@ -153,7 +150,6 @@
 <pre>
 "[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
 </pre>
-
 [在线练习](https://regex101.com/r/7m8me5/1)
 
 `*`字符和`.`字符搭配可以匹配所有的字符`.*`。
@@ -162,7 +158,6 @@
 <pre>
 "\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the con<a href="#learn-regex"><strong>cat</strong></a>enation.
 </pre>
-
 [在线练习](https://regex101.com/r/gGrwuz/1)
 
 ### 2.3.2 `+` 号
@@ -173,7 +168,6 @@
 <pre>
 "c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
 </pre>
-
 [在线练习](https://regex101.com/r/Dzf9Aa/1)
 
 ### 2.3.3 `?` 号
@@ -190,7 +184,6 @@
 <pre>
 "[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
 </pre>
-
 [在线练习](https://regex101.com/r/kPpO2x/1)
 
 ## 2.4 `{}` 号
@@ -201,7 +194,6 @@
 <pre>
 "[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
 </pre>
-
 [在线练习](https://regex101.com/r/juM86s/1)
 
 我们可以省略第二个参数。
@@ -232,7 +224,6 @@
 <pre>
 "(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
 </pre>
-
 [在线练习](https://regex101.com/r/tUxrBG/1)
 
 ## 2.6 `|` 或运算符
@@ -274,7 +265,6 @@
 <pre>
 "(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
 </pre>
-
 [在线练习](https://regex101.com/r/5ljjgB/1)
 
 <pre>
@@ -298,7 +288,6 @@
 <pre>
 "(at\.)$" => The fat cat. sat. on the m<a href="#learn-regex"><strong>at.</strong></a>
 </pre>
-
 [在线练习](https://regex101.com/r/t0AkOd/1)
 
 ##  3. 简写字符集
@@ -320,6 +309,8 @@
 |\t|匹配一个制表符|
 |\v|匹配一个垂直制表符|
 |\p|匹配 CR/LF（等同于 `\r\n`），用来匹配 DOS 行终止符|
+|\xnn|ASCII代码中十六进制代码为nn的字符|
+|\b|代表着单词的开头或结尾，也就是单词的分界处，但并不匹配单词分隔字符中的任何一个，它**只匹配一个位置**|
 
 ## 4. 零宽度断言（前后预查）
 
@@ -349,7 +340,6 @@
 <pre>
 "(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
-
 [在线练习](https://regex101.com/r/IDDARt/1)
 
 ### 4.2 `?!...` 负先行断言
@@ -373,7 +363,6 @@
 <pre>
 "(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
-
 [在线练习](https://regex101.com/r/avH165/1)
 
 ### 4.4 `?<!...` 负后发断言
@@ -406,13 +395,11 @@
 <pre>
 "The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
 </pre>
-
 [在线练习](https://regex101.com/r/dpQyf9/1)
 
 <pre>
 "/The/gi" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
 </pre>
-
 [在线练习](https://regex101.com/r/ahfiuh/1)
 
 ### 5.2 全局搜索 (Global search)
@@ -423,13 +410,11 @@
 <pre>
 "/.(at)/" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
 </pre>
-
 [在线练习](https://regex101.com/r/jnk6gM/1)
 
 <pre>
 "/.(at)/g" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> <a href="#learn-regex"><strong>sat</strong></a> on the <a href="#learn-regex"><strong>mat</strong></a>.
 </pre>
-
 [在线练习](https://regex101.com/r/dO1nef/1)
 
 ### 5.3 多行修饰符 (Multiline)
@@ -453,7 +438,6 @@
                   cat <a href="#learn-regex"><strong>sat</strong></a>
                   on the <a href="#learn-regex"><strong>mat.</strong></a>
 </pre>
-
 [在线练习](https://regex101.com/r/E88WE2/1)
 
 ### 6. 贪婪匹配与惰性匹配 (Greedy vs lazy matching)
@@ -462,7 +446,6 @@
 
 <pre>
 "/(.*at)/" => <a href="#learn-regex"><strong>The fat cat sat on the mat</strong></a>. </pre>
-
 [在线练习](https://regex101.com/r/AyAdgJ/1)
 
 <pre>
